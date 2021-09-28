@@ -1,0 +1,15 @@
+{
+    "name": "thecodeholic/phpmvc-framework",
+    "authors": [
+        {
+            "name": "Marip Nyau Brang Seng",
+            "email": "novemberjob007@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
