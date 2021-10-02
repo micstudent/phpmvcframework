@@ -3,7 +3,7 @@
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use app\core\application;
+use App\Core\Application;
 
 $app = new Application();
 

@@ -1,5 +1,5 @@
 <?php
-namespace app\core;
+namespace App\Core;
 /**
  * Class Application
  *
@@ -11,20 +11,24 @@ namespace app\core;
  class Router
  {
      public Request $request;
-     protected array $routes = [];
-
-     public function __construct(Request $request)
+     protected array $routes = [];  
+          
+     public function __construct(Request $req)
      {  
-         $this->request = $request;
+         $this->request = $req;
      }
 
      public function get($path,$callback)
      {
-        $this->routes['get'][$path] = $callback;var_dump($this->routes['get'][$path]);die();
+        $this->routes['get'][$path] = $callback;
      }
 
      public function resolve()
      {
-         $this->request->getPath();
+        $path = $this->request->getPath();
+        echo '<pre>';
+        var_dump($path);
+        echo '</pre>';
+        exit;
      }
  }

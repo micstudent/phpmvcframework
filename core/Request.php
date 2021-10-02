@@ -1,16 +1,17 @@
 <?php
-namespace app\core;
+namespace App\Core;
 
 class Request
 {
     public function getPath()
     {
-        $path = $_SERVER['REQUEST_URI'] ;var_dump($path);die();
+        $path = $_SERVER['REQUEST_URI'] ?? "a";var_dump($path);die();
         $position = strpos($path,'?');
-         echo '<pre>';
-         var_dump($position);
-         echo '</pre>';
-         exit;
+        if($position==false)
+        {
+            return $path;
+        }
+         return substr($path,0,$position);
     }
 
     public function getMethod()

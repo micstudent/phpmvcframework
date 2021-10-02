@@ -8,8 +8,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "app\\": "./"
+            "App\\Core\\": "core"
         }
+        
     },
     "require": {}
 }

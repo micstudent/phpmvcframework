@@ -1,5 +1,5 @@
 <?php
-namespace app\core;
+namespace App\Core;
 /**
  * Class Application
  *
@@ -10,18 +10,19 @@ namespace app\core;
 
  class Application
  {
-     public Router $router;
-     public Request $request;
+    public Request $request;
+    public Router $router;
 
      public function __construct()
      {
-         $this->request = new Request();
-         $this->router = new Router($this->request);
+         $this->request = new Request(); 
+         $this->router = new Router($this->request);          
      }
 
      public function run()
      {
          $this->router->resolve();
+        
      }
     
  }
