@@ -25,10 +25,23 @@ namespace App\Core;
 
      public function resolve()
      {
-        $path = $this->request->getPath();
-        echo '<pre>';
-        var_dump($path);
-        echo '</pre>';
-        exit;
+        $path = $this->request->getPath();   
+        $method = $this->request->getMethod();
+        $callback = $this->routes[$method][$path] ?? false;
+        if($callback===false)
+        {
+            return "not found";
+        }
+        if(is_string($callback))
+        {
+            return $this->renderView($callback);var_dump($callback);die();
+        }
+        return call_user_func($callback);
+        
      }
+     
+     public function renderView($view)
+    {
+        include_once __DIR__.'/../views/'.'contact'.'.php';
+    }
  }
